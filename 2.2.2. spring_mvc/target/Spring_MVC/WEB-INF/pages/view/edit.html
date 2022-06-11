@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновление пользователей</title>
+</head>
+<body id="range5">
+<form id="form" th:method="patch" th:action="@{/user/{id}(id=${user.getId()})}" th:object="${user}">
+    <label for="id">Id</label>
+    <input  readonly type="number" th:field="*{id}" id="id" placeholder="id">
+    <br/>
+    <label for="name">Name</label>
+    <input  type="text" th:field="*{name}" id="name">
+    <div style="color:black" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="age">Age</label>
+    <input  type="text" th:field="*{age}" id="age">
+    <div style="color:black" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+    <br/>
+    <label for="email">Email</label>
+    <input  type="text" th:field="*{email}" id="email">
+    <div style="color:black" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+    <br/>
+    <input id="ButtData" type="submit" value="Обновить">
+</form>
+</body>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+
+
+
+#range5 {
+  background: rgba(77, 56, 75, 1);
+  background: -moz-linear-gradient(
+    left,
+    rgba(77, 56, 75, 1) 0%,
+    rgba(36, 54, 90, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, rgba(77, 56, 75, 1)),
+    color-stop(100%, rgba(36, 54, 90, 1))
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(77, 56, 75, 1) 0%,
+    rgba(36, 54, 90, 1) 100%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(77, 56, 75, 1) 0%,
+    rgba(36, 54, 90, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgba(77, 56, 75, 1) 0%,
+    rgba(36, 54, 90, 1) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(77, 56, 75, 1) 0%,
+    rgba(36, 54, 90, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d384b', endColorstr='#24365a', GradientType=1 );
+  height: 100%;
+  min-height: 400px;
+  color: #eee;
+}
+
+
+
+#range5 .login-wr {
+  position: relative;
+  margin: 0 auto;
+  max-width: 270px;
+  padding: 0 15px 0 15px;
+}
+
+#range5 h2 {
+  font-weight: 200;
+  font-size: 1.6em;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+}
+#range5 .contrtext {
+  padding-top: 20px;
+  text-align: center;
+}
+#range5 dd {
+  font-weight: 200;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+}
+
+#range5 .form {
+  padding-top: 20px;
+  text-align: center;
+}
+
+#range5 input[type="text"],
+#range5 input[type="password"],
+#range5 button {
+  margin-bottom: 25px;
+  height: 40px;
+  outline: 0;
+  -moz-outline-style: none;
+}
+
+#range5 input[type="text"] {
+  background: url("img/user2.png") no-repeat left 10px center;
+}
+
+#range5 input[type="password"] {
+  background: url("img/pencil2.png") no-repeat left 10px center;
+}
+
+#range5 input[type="text"],
+#range5 input[type="password"] {
+  width: calc(80% - 50px);
+  border: none;
+  border-bottom: 1px solid #666;
+  padding: 0 0 0 50px;
+  font-size: 14px;
+}
+
+#range5 input[type="text"]:focus,
+#range5 input[type="password"]:focus {
+  border-bottom: 1px solid #ccc;
+  color: #eee;
+}
+
+#range5 a {
+  text-align: center;
+  font-size: 12px;
+  color: #eee;
+}
+
+
+#range5*::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+#range5 *:-moz-placeholder {
+  color: #ccc;
+}
+
+#range5 *::-moz-placeholder {
+  color: #ccc;
+}
+
+#range5 *:-ms-input-placeholder {
+  color: #ccc;
+}
+
+
+
+#ButtData
+{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    border: 1px solid #666;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
+}
+#form{
+    width: 100%;
+}
+</style>
+</html>
